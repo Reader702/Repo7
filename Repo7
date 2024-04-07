@@ -1,0 +1,497 @@
+
+
+my_vector <- c(1, 2, 3, 4, 5)
+
+print(my_vector)
+
+my_list <- list(name = "John", age = 30, city = "New York")
+
+print(my_list)
+
+my_matrix <- matrix(1:6, nrow = 2, ncol = 3)
+
+print(my_matrix)
+
+
+
+my_df <- data.frame(Name = c("Alice", "Bob", "Charlie"),
+
+Age = c(25, 30, 22))
+
+print(my_df)
+
+
+my_array <- array(1:12, dim = c(2, 3, 2))
+
+print(my_array)
+
+
+
+my_factor <- factor(c("High", "Low", "Medium", "High", "Low"))
+
+print(my_factor)
+
+
+date <- as.Date(c("2023-01-01", "2023-01-02", "2023-01-03"))
+
+value <- c(100, 110, 105)
+
+df_time_series <- data.frame(Date = date, Value = value)
+
+print(df_time_series)
+
+pr.2
+Variables
+
+name <- "Alice"
+
+age <- 25
+
+height <- 165.5
+
+is_student <- TRUE
+
+# Constants
+
+PI <- 3.14159265359
+
+G <- 9.81
+
+# Data Types
+
+char_vector <- c("apple", "banana", "cherry")
+
+int_vector <- c(1, 2, 3, 4, 5)
+
+double_vector <- c(1.5, 2.7, 3.0)
+
+logical_vector <- c(TRUE, FALSE, TRUE, FALSE)
+
+# Print variables, constants, and data types
+
+cat("Name:", name, "\n")
+
+cat("Age:", age, "\n")
+
+cat("Height:", height, "\n")
+
+cat("Is Student:", is_student, "\n")
+
+cat("PI Constant:", PI, "\n")
+
+cat("Gravity Constant:", G, "\n")
+
+cat("Character Vector:", char_vector, "\n")
+
+cat("Integer Vector:", int_vector, "\n")
+
+cat("Double Vector:", double_vector, "\n")
+
+cat("Logical Vector:", logical_vector, "\n")
+
+prog 3
+
+Function with default argument values
+
+calculate_area <- function(shape = "circle", radius = 1, length
+
+= 1, width = 1) {
+
+if (shape == "circle") {
+
+area <- pi * radius^2
+
+} else if (shape == "rectangle") {
+
+area <- length * width
+
+} else {
+
+area <- 0
+
+}
+
+return(list(shape = shape, area = area))
+
+}
+
+# Calculate areas using the function
+
+circle_area <- calculate_area("circle", radius = 5)
+
+rect_area <- calculate_area("rectangle", length = 4, width = 6)
+
+default_area <- calculate_area()
+
+# Print the results
+
+cat("Circle Area:", circle_area$area, "for shape:",
+
+circle_area$shape, "\n")
+
+cat("Rectangle Area:", rect_area$area, "for shape:",
+
+rect_area$shape, "\n")
+
+cat("Default Area:", default_area$area, "for shape:",
+
+default_area$shape, "\n")
+
+# Conditional statements
+
+grade <- 85
+
+if (grade >= 90) {
+
+cat("A\n")
+
+} else if (grade >= 80) {
+
+cat("B\n")
+
+} else if (grade >= 70) {
+
+cat("C\n")
+
+} else {
+
+cat("F\n")
+
+}
+
+# Loop
+
+for (i in 1:5) {
+
+cat("Iteration:", i, "\n")
+
+}
+
+# Logical operators
+
+is_sunny <- TRUE
+
+is_warm <- TRUE
+
+if (is_sunny && is_warm) {
+
+cat("It's a nice day!\n")
+
+}
+
+# Complex objects (list of lists)
+
+student1 <- list(name = "Alice", age = 25)
+
+student2 <- list(name = "Bob", age = 22)
+
+students <- list(student1, student2)
+
+# Accessing complex object elements
+
+cat("First student's name:", students[[1]]$name, "\n")
+
+cat("Second student's age:", students[[2]]$age, "\n")
+
+prog 4
+
+Create a sample vector
+
+values <- c(1, 2, 3, 4, 5)
+
+# Calculate cumulative sum
+
+cumulative_sum <- cumsum(values)
+
+cat("Cumulative Sum:", cumulative_sum, "\n")
+
+# Calculate cumulative product
+
+cumulative_product <- cumprod(values)
+
+cat("Cumulative Product:", cumulative_product, "\n")
+
+# Find the minimum and maximum values
+
+min_value <- min(values)
+
+max_value <- max(values)
+
+cat("Minimum Value:", min_value, "\n")
+
+cat("Maximum Value:", max_value, "\n")
+
+# Basic calculus operations
+
+# Define a function
+
+f <- function(x) {
+
+return(2 * x^2 + 3 * x + 1)
+
+}
+
+# Calculate the derivative (first order)
+
+library(Deriv)
+
+derivative <- Deriv(f, "x")
+
+cat("Derivative of 2x^2 + 3x + 1:", derivative(2), "\n")
+
+# Calculate the integral
+
+library(pracma)
+
+integral <- integral(f, lower = 1, upper = 2)
+
+cat("Integral of 2x^2 + 3x + 1 from 1 to 2:", integral, "\n")
+
+prog5
+
+Load the markovchain package
+
+library(markovchain)
+
+# Define the transition matrix of the Markov chain
+
+# Replace this with your own transition matrix
+
+P <- matrix(c(0.7, 0.3, 0.2, 0.8), nrow = 2, byrow = TRUE)
+
+# Create a markovchain object
+
+mc <- new("markovchain", states = c("State1", "State2"), transitionMatrix = P)
+
+# Find the stationary distribution
+
+stationary_distribution <- steadyStates(mc)
+
+# Print the stationary distribution
+
+cat("Stationary Distribution:")
+
+print(stationary_distribution)
+
+prog 6
+
+# Create vectors
+
+vector1 <- c(1, 2, 3)
+
+vector2 <- c(4, 5, 6)
+
+# Create matrices
+
+matrix1 <- matrix(c(1, 2, 3, 4), nrow = 2)
+
+matrix2 <- matrix(c(7, 8, 9, 10), nrow = 2)
+
+# Vector addition
+
+vector_sum <- vector1 + vector2
+
+cat("Vector Addition:", vector_sum, "\n")
+
+# Vector subtraction
+
+vector_diff <- vector1 - vector2
+
+cat("Vector Subtraction:", vector_diff, "\n")
+
+# Vector dot product
+
+dot_product <- sum(vector1 * vector2)
+
+cat("Vector Dot Product:", dot_product, "\n")
+
+# Matrix addition
+
+matrix_sum <- matrix1 + matrix2
+
+cat("Matrix Addition:\n")
+
+print(matrix_sum)
+
+# Matrix subtraction
+
+matrix_diff <- matrix1 - matrix2
+
+cat("Matrix Subtraction:\n")
+
+print(matrix_diff)
+
+# Matrix multiplication
+
+matrix_product <- matrix1 %*% t(matrix2)
+
+cat("Matrix Multiplication:\n")
+
+print(matrix_product)
+
+# Matrix determinant
+
+matrix_det <- det(matrix1)
+
+cat("Matrix Determinant:", matrix_det, "\n")
+
+# Matrix inverse
+
+matrix_inv <- solve(matrix1)
+
+cat("Matrix Inverse:\n")
+
+print(matrix_inv)
+
+prog7
+
+data <- c(23, 45, 56, 32, 67, 89, 55, 43, 78, 36, 49, 60, 70)
+
+# Create a basic line chart
+
+plot(data, type = "l", col = "blue", xlab = "X-axis", ylab = "Y-axis", main = "Line Chart")
+
+# Create a histogram
+
+hist(data, col = "lightblue", xlab = "Value", ylab = "Frequency", main = "Histogram")
+
+# Create a pie chart
+
+pie_data <- c(20, 30, 40, 10)
+
+pie(pie_data, labels = c("A", "B", "C", "D"), col = rainbow(length(pie_data)), main = "Pie
+
+Chart")
+
+# Create a boxplot
+
+boxplot(data, col = "lightgreen", xlab = "Value", main = "Box Plot")
+
+# Create a scatterplot
+
+x <- c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+y <- c(2, 4, 5, 7, 8, 10, 11, 14, 15, 17)
+
+plot(x, y, col = "red", xlab = "X-axis", ylab = "Y-axis", main = "Scatterplot")
+
+# Add a regression line to the scatterplot
+
+abline(lm(y ~ x), col = "blue")
+
+# Create a legend for the scatterplot
+
+legend("topleft", legend = "Regression Line", col = "blue", lty = 1)
+
+prog8
+
+# Create a sample DataFrame
+
+data <- data.frame(
+
+Name = c("Alice", "Bob", "Charlie", "David", "Eve"),
+
+Age = c(25, 30, 22, 28, 35),
+
+City = c("New York", "San Francisco", "Los Angeles", "Chicago", "Miami")
+
+)
+
+# Display the entire DataFrame
+
+print(data)
+
+# Select specific columns
+
+selected_columns <- data[c("Name", "Age")]
+
+print("Selected Columns:")
+
+print(selected_columns)
+
+# Select rows based on a condition
+
+young_people <- data[data$Age < 30, ]
+
+print("Young People:")
+
+print(young_people)
+
+# Change a specific value in the DataFrame
+
+data[1, "Age"] <- 26
+
+# Add a new column to the DataFrame
+
+data$Salary <- c(55000, 60000, 48000, 65000, 70000)
+
+print("DataFrame with Salary:")
+
+print(data)
+
+# Calculate the average age
+
+average_age <- mean(data$Age)
+
+cat("Average Age:", average_age, "\n")
+
+# Calculate the maximum salary
+
+max_salary <- max(data$Salary)
+
+cat("Maximum Salary:", max_salary, "\n")
+
+# Group data by a column and calculate summary statistics
+
+library(dplyr)
+
+grouped_data <- data %>%
+
+group_by(City) %>%
+
+summarise(Average_Age = mean(Age), Max_Salary = max(Salary))
+
+print("Grouped Data:")
+
+print(grouped_data)
+
+prog 9
+
+# Load the mtcars dataset
+
+data(mtcars)
+
+# Explore the first few rows of the dataset
+
+head(mtcars)
+
+# Split the dataset into training and testing sets
+
+set.seed(123) # Set seed for reproducibility
+
+sample_index <- sample(1:nrow(mtcars), 0.7 * nrow(mtcars)) # 70% for training, 30% for testing
+
+train_data <- mtcars[sample_index, ]
+
+test_data <- mtcars[-sample_index, ]
+
+# Build a multivariate linear regression model
+
+model <- lm(mpg ~., data = train_data) # Assuming "mpg" is the dependent variable
+
+# Summary of the model
+
+summary(model)
+
+# Make predictions on the test set
+
+predictions <- predict(model, newdata = test_data)
+
+# Evaluate the model
+
+mse <- mean((predictions - test_data$mpg)^2) # Mean Squared Error
+
+# Print the Mean Squared Error
+
+cat("Mean Squared Error:", mse, "\n")
+
